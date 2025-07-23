@@ -1,7 +1,6 @@
 
 # AMMC Gear Reservation System
-## Technologies:** 
-C#, Blazor Server, Class Library, SQL Server, JavaScript, CSS, Bootstrap, Git, GitHub, Azure
+**Technologies: C#, Blazor Server, Class Library, SQL Server, JavaScript, CSS, Bootstrap, Git, GitHub, Azure
 **Note:** Integrated API for authentication and authorization is used in the production version (not shared publicly for security reasons).
 
 This web-based gear reservation system was developed for the Alberta Adventure Mountain Club (AMMC) to streamline the process of reserving mountain climbing equipment. It allows users to browse available gear and make reservations based on selected date ranges.
