@@ -1,0 +1,407 @@
+﻿@page "/"
+@inject NavigationManager NavigationManager
+@inject AlbertaAdventureServices AlbertaAdventureServices
+@inject CartViewModel userReservationCart
+@rendermode InteractiveServer
+
+<h1 class="page-heading text-uppercase mb-4">AAMC Gear Inventory</h1>
+
+<!-- Date Filter Section -->
+<div class="row mb-4">
+    <div class="col-md-4">
+        <label class="text-light">Start Date<span class="text-danger">*</span></label>
+        @* <InputDate class="form-control" @bind-Value="StartDate" /> *@
+        <InputDate class="form-control" @bind-Value="StartDate" @onchange="OnDateChanged" />
+    </div>
+    <div class="col-md-4">
+        <label class="text-light">End Date<span class="text-danger">*</span></label>
+       @*  <InputDate class="form-control" @bind-Value="EndDate" /> *@
+        <InputDate class="form-control" @bind-Value="EndDate" @onchange="OnDateChanged" />
+    </div>
+    <div class="col-md-4 d-flex align-items-end">
+        <button class="btn btn-primary w-100" @onclick="LoadGearForDateRange">Show Available Gears</button>
+    </div>
+</div>
+
+@if (!string.IsNullOrEmpty(UserMessage))
+{
+    <div class="alert alert-warning mt-3">@UserMessage</div>
+}
+
+
+<!-- Top Buttons -->
+<div class="gear-container d-flex justify-content-center gap-3 mb-3">
+    <button @onclick="LoadCreateGear" class="btn btn-outline-light btn-lg text-uppercase">Add Gear</button>
+    <button @onclick="ReservationRedirect" class="btn btn-outline-light btn-lg text-uppercase">My Reservations</button>
+    <button class="btn btn-outline-light position-relative"
+    @onclick="@(() => NavigationManager.NavigateTo("/cart"))"
+    style="width: 60px; background-color: white;">
+        🛒
+        @if (userReservationCart.Items.Any())
+        {
+            <span class="badge bg-danger position-absolute top-0 start-100 translate-middle">
+                @userReservationCart.Items.Count
+            </span>
+        }
+    </button>
+</div>
+
+<!-- Search + Filter Section -->
+<div class="row">
+    <h4 class="gear-count col-md-4 text-light mt-2">@GearInventories?.Count AAMC Gear Inventory</h4>
+    <div class="col-md-4 col-xl-5 btn-group">
+        <button class="btn btn-order @SortedByNewClass(true) btn-active" @onclick="(() => OrderByNew(true))">New</button>
+        <button class="btn btn-order @SortedByNewClass(false) btn-active" @onclick="(() => OrderByNew(false))">Popular</button>
+    </div>
+    <div class="col-md-4 col-xl-3 search-box">
+        <input class="form-control rounded-control" type="text" placeholder="Search" @oninput="OnSearchInput" />
+    </div>
+</div>
+
+<!-- Gear Grid -->
+<div class="row">
+    <div class="col-md-8 col-xl-9">
+        @if (GearInventories is not null && GearInventories.Count > 0)
+        {
+            <div class="gear-grid">
+                @foreach (var gear in GearInventoriesList)
+                {
+                    <div class="gear-card">
+                        <div class="gear-info clickable" @onclick="() => OpenDetails(gear)">
+                            <div class="gear-header">
+                                <span class="gear-tag">@gear.TagNumber</span>
+                                <span class="gear-status @(gear.IsAvailable ? "available" : "not-available")">
+                                    @(gear.IsAvailable ? "Available" : "Reserved")
+                                </span>
+                            </div>
+                            <div class="gear-details">
+                                <span>GearID: @gear.GearID</span>
+                                <span>Category: @gear.CategoryName</span>
+                                <span>Brand: @gear.Brand</span>
+                                <span>Size: @gear.Size</span>
+                                <span>Condition: @gear.Condition</span>
+                                <span>Limit Hrs: @gear.HoursLimit</span>
+                            </div>
+                        </div>
+
+                        @if (gear.IsAvailable)
+                        {
+                            @if (IsInCart(gear.GearID))
+                            {
+                                <button class="btn btn-danger w-100 mt-2" @onclick="() => RemoveFromCart(gear.GearID)">
+                                    − Cart
+                                </button>
+                            }
+                            else
+                            {
+                                <button class="btn btn-success w-100 mt-2" @onclick="() => AddToCartDirectly(gear)">
+                                    + Cart
+                                </button>
+                            }
+                        }
+                        else
+                        {
+                            <button class="btn btn-secondary w-100 mt-2" disabled>
+                                Reserved
+                            </button>
+                        }
+
+                    </div>
+                }
+            </div>
+        }
+        else if (StartDate.HasValue && EndDate.HasValue)
+        {
+            @* <div class="alert alert-info mt-4">No gear found for the selected filter or search.</div> *@
+        }
+    </div>
+
+    <!-- Sidebar -->
+    <div class="col-md-4 col-xl-3">
+        @if (Categories is not null)
+        {
+            <div class="sidebar-box">
+                <span class="sidebar-title">Category</span>
+                <div class="sidebar-item" @onclick="OnCategoryAll">All</div>
+                @foreach (var category in Categories)
+                {
+                    <div class="sidebar-item" @onclick="() => FilterByCategory(category.CategoryName)">
+                        @category.CategoryName
+                    </div>
+                }
+            </div>
+        }
+
+        <div class="sidebar-box">
+            <span class="sidebar-title">Status</span>
+            <div class="sidebar-item" @onclick="() => FilterGears(null)">All</div>
+            <div class="sidebar-item" @onclick="() => FilterGears(true)">Available</div>
+            <div class="sidebar-item" @onclick="() => FilterGears(false)">Reserved</div>
+        </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="paginationContainer">
+        <button class="btn btn-dark" @onclick="@(e => NavigateTo("first"))">@("<<")</button>
+        <button class="btn btn-dark" @onclick="@(e => NavigateTo("prev"))" disabled="@(CurrentPage == 0)" style="margin-left: 5px;">Prev</button>
+        @for (int i = 0; i <= TotalPages; i++)
+        {
+            var pageNumber = i;
+            <button class="btn @(CurrentPage == pageNumber? "btn-dark":"btn-outline-secondary")" @onclick="@(e => UpdateList(pageNumber))" style="margin: 0 5px;">@(i + 1)</button>
+        }
+        <button class="btn btn-dark" @onclick="@(e => NavigateTo("next"))" disabled="@(CurrentPage == TotalPages)" style="margin: 0 5px;">Next</button>
+        <button class="btn btn-dark" @onclick="@(e => NavigateTo("last"))">@(">>")</button>
+    </div>
+</div>
+
+@code {
+    public int PageSize { get; set; }
+    public int TotalPages { get; set; }
+    public int CurrentPage { get; set; }
+
+    private bool ShowStartValidation = false;
+    private bool ShowEndValidation = false;
+
+    private List<GearInventoryViewModel> GearInventories = new();
+    private List<GearInventoryViewModel> GearInventoriesList = new();
+    private List<GearInventoryViewModel> statuses = new();
+    private List<CategoryViewModel> Categories = new();
+    private string UserMessage = string.Empty;
+    private DateTime? StartDate { get; set; }
+    private DateTime? EndDate { get; set; }
+
+    private bool sortedByNew = true;
+
+    protected override async Task OnInitializedAsync()
+    {
+        Categories = await AlbertaAdventureServices.GetAllCategories();
+        PageSize = 10;
+
+        // Restore dates from the cart if they exist
+        if (userReservationCart.StartDate.HasValue && userReservationCart.EndDate.HasValue)
+        {
+            StartDate = userReservationCart.StartDate;
+            EndDate = userReservationCart.EndDate;
+
+            // Optionally auto-load gear again
+            GearInventories = await AlbertaAdventureServices.GetAllGearInventory(StartDate.Value, EndDate.Value);
+            statuses = GearInventories;
+            TotalPages = (int)Math.Ceiling(GearInventories.Count / (double)PageSize);
+            UpdateList(0);
+        }
+    }
+
+
+
+    private async Task OnDateChanged(ChangeEventArgs e)
+    {
+        ShowStartValidation = !userReservationCart.StartDate.HasValue;
+        ShowEndValidation = !userReservationCart.EndDate.HasValue;
+
+        if (userReservationCart.StartDate.HasValue &&
+            userReservationCart.EndDate.HasValue &&
+            userReservationCart.EndDate >= userReservationCart.StartDate)
+        {
+            GearInventories = await AlbertaAdventureServices
+                .GetAllGearInventory(userReservationCart.StartDate.Value, userReservationCart.EndDate.Value);
+
+            statuses = GearInventories;
+            TotalPages = (int)Math.Ceiling(GearInventories.Count / (double)PageSize);
+            UpdateList(0);
+        }
+        else
+        {
+            GearInventories.Clear();
+            GearInventoriesList.Clear();
+        }
+    }
+ 
+
+    private async Task ShowMessage(string message)
+    {
+        UserMessage = message;
+        await ClearMessage();
+    }
+
+    private async Task ClearMessage()
+    {
+        await Task.Delay(3000);
+        UserMessage = string.Empty;
+        InvokeAsync(StateHasChanged); // triggers UI refresh
+    }
+
+
+    // private async Task LoadGearForDateRange()
+    // {
+    //     if (StartDate is not null && EndDate is not null && EndDate >= StartDate)
+    //     {
+    //         // Store globally in the cart
+    //         userReservationCart.StartDate = StartDate;
+    //         userReservationCart.EndDate = EndDate;
+
+    //         GearInventories = await AlbertaAdventureServices.GetAllGearInventory(StartDate.Value, EndDate.Value);
+    //         statuses = GearInventories;
+    //         TotalPages = (int)Math.Ceiling(GearInventories.Count / (double)PageSize);
+    //         UpdateList(0);
+    //     }
+    //     else
+    //     {
+    //         GearInventories.Clear();
+    //         GearInventoriesList.Clear();
+    //     }
+    // }
+
+    private async Task OnDateInputChanged(ChangeEventArgs e)
+    {
+        // Only load when both dates are set and valid
+        if (StartDate is not null && EndDate is not null && EndDate >= StartDate)
+        {
+            await LoadGearForDateRange();
+        }
+    }
+
+
+    private async Task LoadGearForDateRange()
+    {
+        try
+        {
+            if (StartDate is not null && EndDate is not null)
+            {
+                if (EndDate < StartDate)
+                {
+                    GearInventories.Clear();
+                    GearInventoriesList.Clear();
+                    ShowMessage("❌ End date cannot be earlier than start date.");
+                    return;
+                }
+
+                if ((EndDate.Value - StartDate.Value).TotalDays > 15)
+                {
+                    GearInventories.Clear();
+                    GearInventoriesList.Clear();
+                    ShowMessage("❌ You can only reserve gear for up to 15 days. Please select a shorter date range.");
+                    return;
+                }
+
+                // Store dates in cart
+                userReservationCart.StartDate = StartDate;
+                userReservationCart.EndDate = EndDate;
+
+                // Load gear
+                GearInventories = await AlbertaAdventureServices.GetAllGearInventory(StartDate.Value, EndDate.Value);
+                statuses = GearInventories;
+
+                var reservedGearIDs = GearInventories
+                    .Where(g => !g.IsAvailable)
+                    .Select(g => g.GearID)
+                    .ToHashSet();
+
+                bool hasConflict = userReservationCart.Items.Any(item => reservedGearIDs.Contains(item.GearID));
+                if (hasConflict)
+                {
+                    userReservationCart.Clear();
+                    ShowMessage("⚠️ Some gear in your cart is no longer available. Your cart has been cleared.");
+                }
+
+                TotalPages = (int)Math.Ceiling(GearInventories.Count / (double)PageSize);
+                UpdateList(0);
+
+                if (GearInventories.Count == 0)
+                {
+                    ShowMessage("ℹ️ No gear is available for the selected date range.");
+                }
+            }
+            else
+            {
+                GearInventories.Clear();
+                GearInventoriesList.Clear();
+                ShowMessage("❌ Please select both a start and end date.");
+            }
+        }
+        catch (Exception ex)
+        {
+            GearInventories.Clear();
+            GearInventoriesList.Clear();
+            ShowMessage("❌ Something went wrong while loading the gear. Please try again.");
+            Console.Error.WriteLine($"[ERROR] LoadGearForDateRange: {ex.Message}");
+        }
+    }
+
+
+
+    private void UpdateList(int pageNumber)
+    {
+        GearInventoriesList = GearInventories.Skip(PageSize * pageNumber).Take(PageSize).ToList();
+        CurrentPage = pageNumber;
+    }
+
+    private void NavigateTo(string direction)
+    {
+        if (direction == "prev" && CurrentPage != 0) CurrentPage -= 1;
+        if (direction == "next" && CurrentPage != TotalPages) CurrentPage += 1;
+        if (direction == "first") CurrentPage = 0;
+        if (direction == "last") CurrentPage = TotalPages;
+        UpdateList(CurrentPage);
+    }
+
+    private void AddToCartDirectly(GearInventoryViewModel gear)
+    {
+        if (!userReservationCart.Items.Any(x => x.GearID == gear.GearID))
+        {
+            userReservationCart.Items.Add(new CartViewModel.CartItem
+                {
+                    GearID = gear.GearID,
+                    TagNumber = gear.TagNumber,
+                    CategoryName = gear.CategoryName,
+                    Brand = gear.Brand,
+                    Size = gear.Size,
+                    Condition = gear.Condition,
+                    Description = gear.Description,
+                    EstimatedUseHours = 1,
+                    Instructions = ""
+                });
+        }
+    }
+
+    private void RemoveFromCart(int gearId)
+        => userReservationCart.RemoveItem(gearId);
+
+    private bool IsInCart(int gearId)
+        => userReservationCart.Items.Any(x => x.GearID == gearId);
+
+    private void FilterByCategory(string categoryName)
+        => GearInventories = statuses.Where(x => x.CategoryName == categoryName).ToList();
+
+    private void OnCategoryAll() => GearInventories = statuses;
+
+    private void OrderByNew(bool isNew)
+    {
+        GearInventories = isNew
+            ? statuses.Where(x => x.Condition.Equals("New", StringComparison.OrdinalIgnoreCase)).ToList()
+            : statuses.Where(x => !x.Condition.Equals("New", StringComparison.OrdinalIgnoreCase)).ToList();
+    }
+
+    private string SortedByNewClass(bool isNew) => sortedByNew == isNew ? "btn-order-active" : "";
+
+    private void OnSearchInput(ChangeEventArgs e)
+    {
+        string search = e.Value?.ToString()?.ToLower() ?? "";
+        GearInventories = statuses.Where(x =>
+            x.TagNumber.Contains(search, StringComparison.OrdinalIgnoreCase) ||
+            x.Description.Contains(search, StringComparison.OrdinalIgnoreCase) ||
+            x.Brand.Contains(search, StringComparison.OrdinalIgnoreCase) ||
+            x.CategoryName.Contains(search, StringComparison.OrdinalIgnoreCase)).ToList();
+    }
+
+    private void LoadCreateGear() => NavigationManager.NavigateTo("/CreateGearInInventory");
+    private void ReservationRedirect() => NavigationManager.NavigateTo("myReservations/30");
+    private void FilterGears(bool? isAvailable)
+        => GearInventories = isAvailable is null
+            ? statuses
+            : statuses.Where(x => x.IsAvailable == isAvailable).ToList();
+
+    private void OpenDetails(GearInventoryViewModel gear)
+        => NavigationManager.NavigateTo($"/GearDetails/{gear.GearID}");
+
+
+}

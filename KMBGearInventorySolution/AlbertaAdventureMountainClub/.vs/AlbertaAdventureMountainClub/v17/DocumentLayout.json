@@ -1,0 +1,288 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\GearReservation\\AlbertaMountainGearReservationSystem\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{63249B99-CF38-4640-8A7A-C3C1175F3411}|AlbertaAdventureMountainClub.csproj|c:\\users\\bmagu\\onedrive\\desktop\\baist\\capstone\\gearreservation\\albertamountaingearreservationsystem\\kmbgearinventorysolution\\albertaadventuremountainclub\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{63249B99-CF38-4640-8A7A-C3C1175F3411}|AlbertaAdventureMountainClub.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63249B99-CF38-4640-8A7A-C3C1175F3411}|AlbertaAdventureMountainClub.csproj|c:\\users\\bmagu\\onedrive\\desktop\\baist\\capstone\\gearreservation\\albertamountaingearreservationsystem\\kmbgearinventorysolution\\albertaadventuremountainclub\\components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{63249B99-CF38-4640-8A7A-C3C1175F3411}|AlbertaAdventureMountainClub.csproj|solutionrelative:components\\pages\\home.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63249B99-CF38-4640-8A7A-C3C1175F3411}|AlbertaAdventureMountainClub.csproj|c:\\users\\bmagu\\onedrive\\desktop\\baist\\capstone\\gearreservation\\albertamountaingearreservationsystem\\kmbgearinventorysolution\\albertaadventuremountainclub\\components\\pages\\myreservations.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{63249B99-CF38-4640-8A7A-C3C1175F3411}|AlbertaAdventureMountainClub.csproj|solutionrelative:components\\pages\\myreservations.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63249B99-CF38-4640-8A7A-C3C1175F3411}|AlbertaAdventureMountainClub.csproj|c:\\users\\bmagu\\onedrive\\desktop\\baist\\capstone\\gearreservation\\albertamountaingearreservationsystem\\kmbgearinventorysolution\\albertaadventuremountainclub\\components\\pages\\reservationdetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{63249B99-CF38-4640-8A7A-C3C1175F3411}|AlbertaAdventureMountainClub.csproj|solutionrelative:components\\pages\\reservationdetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63249B99-CF38-4640-8A7A-C3C1175F3411}|AlbertaAdventureMountainClub.csproj|c:\\users\\bmagu\\onedrive\\desktop\\baist\\capstone\\gearreservation\\albertamountaingearreservationsystem\\kmbgearinventorysolution\\albertaadventuremountainclub\\components\\pages\\geardetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{63249B99-CF38-4640-8A7A-C3C1175F3411}|AlbertaAdventureMountainClub.csproj|solutionrelative:components\\pages\\geardetails.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bmagu\\AppData\\Roaming\\Microsoft\\UserSecrets\\cbebd83e-26b3-451d-bf7d-c32670b1387c\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63249B99-CF38-4640-8A7A-C3C1175F3411}|AlbertaAdventureMountainClub.csproj|c:\\users\\bmagu\\onedrive\\desktop\\baist\\capstone\\gearreservation\\albertamountaingearreservationsystem\\kmbgearinventorysolution\\albertaadventuremountainclub\\components\\pages\\cart.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{63249B99-CF38-4640-8A7A-C3C1175F3411}|AlbertaAdventureMountainClub.csproj|solutionrelative:components\\pages\\cart.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63249B99-CF38-4640-8A7A-C3C1175F3411}|AlbertaAdventureMountainClub.csproj|c:\\users\\bmagu\\onedrive\\desktop\\baist\\capstone\\gearreservation\\albertamountaingearreservationsystem\\kmbgearinventorysolution\\albertaadventuremountainclub\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{63249B99-CF38-4640-8A7A-C3C1175F3411}|AlbertaAdventureMountainClub.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{63249B99-CF38-4640-8A7A-C3C1175F3411}|AlbertaAdventureMountainClub.csproj|c:\\users\\bmagu\\onedrive\\desktop\\baist\\capstone\\gearreservation\\albertamountaingearreservationsystem\\kmbgearinventorysolution\\albertaadventuremountainclub\\components\\pages\\gearinventory.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{63249B99-CF38-4640-8A7A-C3C1175F3411}|AlbertaAdventureMountainClub.csproj|solutionrelative:components\\pages\\gearinventory.razor||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\ViewModels\\GearInventoryViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\BLL\\AlbertaAdventureServices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\ViewModels\\ReservationViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\ViewModels\\CartViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\Entities\\Reservation.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\ViewModels\\ReservationGearViewModel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5.1\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\BLL\\AlbertaAdventureServices.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\GearReservation\\AlbertaMountainGearReservationSystem\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\GearReservation\\AlbertaMountainGearReservationSystem\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-23T07:22:16.604Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AlbertaAdventureServices.cs",
+              "DocumentMoniker": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5.1\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\BLL\\AlbertaAdventureServices.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Gear\\ProjectVersion5.1\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\BLL\\AlbertaAdventureServices.cs",
+              "ToolTip": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5.1\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\BLL\\AlbertaAdventureServices.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Gear\\ProjectVersion5.1\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\BLL\\AlbertaAdventureServices.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAKUBAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-13T02:30:20.967Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GearDetails.razor",
+              "DocumentMoniker": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\GearReservation\\AlbertaMountainGearReservationSystem\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\Components\\Pages\\GearDetails.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\GearDetails.razor",
+              "ToolTip": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\GearReservation\\AlbertaMountainGearReservationSystem\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\Components\\Pages\\GearDetails.razor",
+              "RelativeToolTip": "Components\\Pages\\GearDetails.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T10:30:34.965Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ReservationDetails.razor",
+              "DocumentMoniker": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\GearReservation\\AlbertaMountainGearReservationSystem\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\Components\\Pages\\ReservationDetails.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\ReservationDetails.razor",
+              "ToolTip": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\GearReservation\\AlbertaMountainGearReservationSystem\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\Components\\Pages\\ReservationDetails.razor",
+              "RelativeToolTip": "Components\\Pages\\ReservationDetails.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T10:04:50.236Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "MyReservations.razor",
+              "DocumentMoniker": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\GearReservation\\AlbertaMountainGearReservationSystem\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\Components\\Pages\\MyReservations.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\MyReservations.razor",
+              "ToolTip": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\GearReservation\\AlbertaMountainGearReservationSystem\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\Components\\Pages\\MyReservations.razor",
+              "RelativeToolTip": "Components\\Pages\\MyReservations.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-12T09:29:36.281Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Cart.razor",
+              "DocumentMoniker": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\GearReservation\\AlbertaMountainGearReservationSystem\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\Components\\Pages\\Cart.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Cart.razor",
+              "ToolTip": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\GearReservation\\AlbertaMountainGearReservationSystem\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\Components\\Pages\\Cart.razor",
+              "RelativeToolTip": "Components\\Pages\\Cart.razor",
+              "ViewState": "AgIAADsAAAAAAAAAAAAqwJEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-10T01:38:24.388Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Home.razor",
+              "DocumentMoniker": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\GearReservation\\AlbertaMountainGearReservationSystem\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\Components\\Pages\\Home.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\Home.razor",
+              "ToolTip": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\GearReservation\\AlbertaMountainGearReservationSystem\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\Components\\Pages\\Home.razor",
+              "RelativeToolTip": "Components\\Pages\\Home.razor",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG0AAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-09T23:30:37.967Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "secrets.json",
+              "DocumentMoniker": "C:\\Users\\bmagu\\AppData\\Roaming\\Microsoft\\UserSecrets\\cbebd83e-26b3-451d-bf7d-c32670b1387c\\secrets.json",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\cbebd83e-26b3-451d-bf7d-c32670b1387c\\secrets.json",
+              "ToolTip": "C:\\Users\\bmagu\\AppData\\Roaming\\Microsoft\\UserSecrets\\cbebd83e-26b3-451d-bf7d-c32670b1387c\\secrets.json",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\cbebd83e-26b3-451d-bf7d-c32670b1387c\\secrets.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-07-23T07:23:01.495Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "GearInventoryViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\ViewModels\\GearInventoryViewModel.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\ViewModels\\GearInventoryViewModel.cs",
+              "ToolTip": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\ViewModels\\GearInventoryViewModel.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\ViewModels\\GearInventoryViewModel.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAQwCcAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T23:18:23.703Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "AlbertaAdventureServices.cs",
+              "DocumentMoniker": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\BLL\\AlbertaAdventureServices.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\BLL\\AlbertaAdventureServices.cs",
+              "ToolTip": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\BLL\\AlbertaAdventureServices.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\BLL\\AlbertaAdventureServices.cs",
+              "ViewState": "AgIAAHIBAAAAAAAAAAAmwH0BAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-09T23:14:49.167Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ReservationViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\ViewModels\\ReservationViewModel.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\ViewModels\\ReservationViewModel.cs",
+              "ToolTip": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\ViewModels\\ReservationViewModel.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\ViewModels\\ReservationViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T01:46:18.629Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\GearReservation\\AlbertaMountainGearReservationSystem\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\GearReservation\\AlbertaMountainGearReservationSystem\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T07:40:31.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "CartViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\ViewModels\\CartViewModel.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\ViewModels\\CartViewModel.cs",
+              "ToolTip": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\ViewModels\\CartViewModel.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\ViewModels\\CartViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T08:49:53.511Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Reservation.cs",
+              "DocumentMoniker": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\Entities\\Reservation.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\Entities\\Reservation.cs",
+              "ToolTip": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\Entities\\Reservation.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\Entities\\Reservation.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAgwCsAAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-12T08:54:42.375Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ReservationGearViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\ViewModels\\ReservationGearViewModel.cs",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\ViewModels\\ReservationGearViewModel.cs",
+              "ToolTip": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\ViewModels\\ReservationGearViewModel.cs",
+              "RelativeToolTip": "..\\..\\..\\..\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureClassLibrary\\ViewModels\\ReservationGearViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-04-10T01:46:39.469Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "GearInventory.razor",
+              "DocumentMoniker": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\GearReservation\\AlbertaMountainGearReservationSystem\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\Components\\Pages\\GearInventory.razor",
+              "RelativeDocumentMoniker": "Components\\Pages\\GearInventory.razor",
+              "ToolTip": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\GearReservation\\AlbertaMountainGearReservationSystem\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\Components\\Pages\\GearInventory.razor",
+              "RelativeToolTip": "Components\\Pages\\GearInventory.razor",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAUwG8AAAAhAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-04-10T03:31:47.72Z"
+            }
+          ]
+        },
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": -1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c64b9c2-e352-428e-a56d-0ace190b99a6}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{f5cd1b51-c771-5648-966f-646d419b1e7c}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

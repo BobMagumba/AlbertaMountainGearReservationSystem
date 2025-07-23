@@ -1,0 +1,105 @@
+﻿@page "/UpdateGearInventory/{GearID:int}"
+@inject NavigationManager NavigationManager
+@inject AlbertaAdventureServices AlbertaAdventureServices
+@rendermode InteractiveServer
+
+<div class="create-gear-container">
+    <div class="create-gear-header">
+        <h2>Update Gear</h2>
+        <button class="close-btn" aria-label="Close" @onclick="ClosePage">&times;</button>
+    </div>
+
+    <EditForm Model="gear" OnValidSubmit="UpdateGear">
+        <DataAnnotationsValidator />
+
+        <div class="gear-form">
+            <div class="form-group">
+                <label>Gear ID</label>
+                <div class="form-control" style="background-color: #e9ecef;">@gear.GearID</div>
+            </div>
+
+            <!-- Row 1 -->
+            <div class="form-row">
+                <div class="form-group half-width">
+                    <label for="TagNumber">Tag Number</label>
+                    <InputText id="TagNumber" class="form-control" @bind-Value="gear.TagNumber" />
+                </div>
+                <div class="form-group half-width">
+                    <label for="Size">Size</label>
+                    <InputText id="Size" class="form-control" @bind-Value="gear.Size" />
+                </div>
+            </div>
+
+            <!-- Row 2 -->
+            <div class="form-row">
+                <div class="form-group half-width">
+                    <label for="CategoryID">Category ID</label>
+                    <InputNumber id="CategoryID" class="form-control" @bind-Value="@gear.CategoryID" />
+                </div>
+
+                <div class="form-group half-width">
+                    <label for="Brand">Brand</label>
+                    <InputText id="Brand" class="form-control" @bind-Value="@gear.Brand" />
+                </div>
+            </div>
+
+            <!-- Row 3 -->
+            <div class="form-row">
+                <div class="form-group half-width">
+                    <label for="Picture">Picture URL</label>
+                    <InputText id="Picture" class="form-control" @bind-Value="@gear.Picture" />
+                </div>
+
+                <div class="form-group half-width">
+                    <label for="Condition">Condition</label>
+                    <InputText id="Condition" class="form-control" @bind-Value="@gear.Condition" />
+                </div>
+            </div>
+
+            <!-- Row 4 -->
+            <div class="form-row">
+                <div class="form-group half-width">
+                    <label for="HoursUsed">Hours Used</label>
+                    <InputNumber id="HoursUsed" class="form-control" @bind-Value="@gear.HoursUsed" />
+                </div>
+
+                <div class="form-group half-width">
+                    <label for="HoursLimit">Hours Limit</label>
+                    <InputNumber id="HoursLimit" class="form-control" @bind-Value="@gear.HoursLimit" />
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="form-group">
+                <label for="Description">Description</label>
+                <InputTextArea id="Description" class="form-control" rows="3" @bind-Value="@gear.Description" />
+            </div>
+
+            <div class="button-group">
+                <button type="submit" class="submit-btn">Update Gear</button>
+                <button type="button" class="cancel-btn" @onclick="ClosePage">Cancel</button>
+            </div>
+        </div>
+    </EditForm>
+</div>
+
+@code {
+    [Parameter] public int GearID { get; set; }
+    private GearInventoryViewModel gear = new GearInventoryViewModel();
+
+    protected override async Task OnInitializedAsync()
+    {
+        gear = await AlbertaAdventureServices.GetGearInventory(GearID);
+    }
+
+    private void  UpdateGear()
+    {
+        AlbertaAdventureServices.UpdateGearInventory(gear);
+        NavigationManager.NavigateTo($"/GearDetails/{gear.GearID}");
+    }
+
+    private void ClosePage()
+    {
+        NavigationManager.NavigateTo($"/GearDetails/{gear.GearID}");
+    }
+}

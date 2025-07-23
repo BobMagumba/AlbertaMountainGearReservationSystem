@@ -1,0 +1,53 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\AlbertaAdventureMountainClub.bundle.scp.css",
+      "PackagePath": "staticwebassets\\AlbertaAdventureMountainClub.mwllazu8m8.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\wwwroot\\app.css",
+      "PackagePath": "staticwebassets\\app.css"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\wwwroot\\bootstrap\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\wwwroot\\bootstrap\\bootstrap.min.css.map",
+      "PackagePath": "staticwebassets\\bootstrap\\bootstrap.min.css.map"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\wwwroot\\favicon.png",
+      "PackagePath": "staticwebassets\\favicon.png"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\wwwroot\\images\\Image.jpg",
+      "PackagePath": "staticwebassets\\images\\Image.jpg"
+    },
+    {
+      "Id": "C:\\Users\\bmagu\\OneDrive\\Desktop\\BAIST\\capstone\\Gear\\ProjectVersion5\\KMBSolutionsCapstone\\KMBGearInventorySolution\\AlbertaAdventureMountainClub\\wwwroot\\images\\equipment.jpg",
+      "PackagePath": "staticwebassets\\images\\equipment.jpg"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AlbertaAdventureMountainClub.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.AlbertaAdventureMountainClub.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.AlbertaAdventureMountainClub.props",
+      "PackagePath": "build\\AlbertaAdventureMountainClub.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.AlbertaAdventureMountainClub.props",
+      "PackagePath": "buildMultiTargeting\\AlbertaAdventureMountainClub.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.AlbertaAdventureMountainClub.props",
+      "PackagePath": "buildTransitive\\AlbertaAdventureMountainClub.props"
+    }
+  ],
+  "ElementsToRemove": []
+}

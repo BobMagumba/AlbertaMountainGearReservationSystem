@@ -1,0 +1,203 @@
+﻿
+ @page "/GearDetails/{gearId:int}"
+@inject NavigationManager NavigationManager
+@inject AlbertaAdventureServices AlbertaAdventureServices
+@rendermode InteractiveServer
+
+<div class="container gear-details-container">
+    <h1 class="text-center mt-4 gear-title" style="color: #FFFFFF">Gear Details</h1>
+
+    @if (gear != null)
+    {
+        <div class="card gear-card shadow-lg">
+            <div class="row g-0 align-items-center">
+                <!-- Image Section -->
+                <div class="col-md-5">
+                    <img src="images/equipment.jpg" class="img-fluid rounded gear-image" alt="Sample Gear Image">
+                </div>
+
+                <!-- Details Section -->
+                <div class="col-md-7">
+                    <div class="card-body">
+                        <h2 class="card-title">@gear.TagNumber</h2>
+
+                        <div class="gear-info">
+                            <p><strong>Gear ID:</strong> @gear.GearID</p>
+                            <p><strong>Category:</strong> @gear.CategoryName</p>
+                            @* <p>
+                                <strong>Status:</strong>
+                                <span class="badge @(gear.IsAvailable ? "bg-success" : "bg-danger")">
+                                    @(gear.IsAvailable ? "Available" : "Reserved")
+                                </span>
+                            </p> *@
+                            <p><strong>Brand:</strong> @gear.Brand</p>
+                            <p><strong>Hours Limit:</strong> @gear.HoursLimit hrs</p>
+                            <p><strong>Condition:</strong> @gear.Condition</p>
+                            <p class="gear-description"><strong>Description:</strong> @gear.Description</p>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="d-flex justify-content-center flex-wrap gap-3 mt-3">
+                            @if (gear.IsAvailable)
+                            {
+                               @*  <button class="btn btn-primary px-4" @onclick="ShowReservationForm">Reserve</button> *@
+                                <button class="btn btn-warning px-4" @onclick="NavigateToUpdate">Update</button>
+                                <button class="btn btn-danger px-4" @onclick="ShowDeleteConfirmation">Delete</button>
+                            }
+                            <button class="btn btn-secondary px-4" @onclick="ClosePage">Close</button>
+                        </div>
+
+                        <!-- Success Message -->
+                        @if (!string.IsNullOrEmpty(successMessage))
+                        {
+                            <div class="alert alert-success mt-3">
+                                <strong>Success!</strong> @successMessage
+                            </div>
+                        }
+
+                        <!-- Reservation Form -->
+                        @if (showReservationForm && gear.IsAvailable)
+                        {
+                            <div class="reservation-form">
+                                <h4>Reserve Gear</h4>
+                                <EditForm Model="@reservationModel" OnValidSubmit="@ReserveGear">
+                                    <DataAnnotationsValidator />
+
+                                    <div class="d-flex flex-wrap gap-3">
+                                        <div class="flex-grow-1">
+                                            <label>Start Date:</label>
+                                            <InputDate class="form-control" @bind-Value="reservationModel.StartDate" />
+                                            <ValidationMessage For="@(() => reservationModel.StartDate)" />
+                                        </div>
+                                        <div class="flex-grow-1">
+                                            <label>End Date:</label>
+                                            <InputDate class="form-control" @bind-Value="reservationModel.EndDate" />
+                                            <ValidationMessage For="@(() => reservationModel.EndDate)" />
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-2 mt-2">
+                                        <label>Estimated Use Hours:</label>
+                                        <InputNumber class="form-control" @bind-Value="reservationModel.EstimatedUseHours" />
+                                        <ValidationMessage For="@(() => reservationModel.EstimatedUseHours)" />
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <label>Instructions:</label>
+                                        <InputTextArea class="form-control" @bind-Value="reservationModel.ReservationInstructions" />
+                                    </div>
+
+                                    <div class="d-flex justify-content-center gap-3 mt-3">
+                                        <button class="btn btn-success px-4" type="submit">Confirm Reservation</button>
+                                        <button class="btn btn-secondary px-4" type="button" @onclick="CancelReservation">Cancel</button>
+                                    </div>
+                                </EditForm>
+                            </div>
+                        }
+
+                        <!-- Delete Confirmation UI -->
+                        @if (showDeleteConfirmation)
+                        {
+                            <div class="reservation-form">
+                                <h4 class="text-danger">Are you sure you want to delete this gear?</h4>
+                                <p>This action cannot be undone.</p>
+                                <div class="d-flex justify-content-center gap-3 mt-3">
+                                    <button class="btn btn-danger px-4" @onclick="ConfirmDelete">Yes, Delete</button>
+                                    <button class="btn btn-secondary px-4" @onclick="CancelDelete">Cancel</button>
+                                </div>
+                            </div>
+                        }
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+@code {
+    [Parameter] public int gearId { get; set; }
+    private GearInventoryViewModel gear { get; set; }
+    private ReservationViewModel reservationModel = new();
+    private bool showReservationForm = false;
+    private bool showDeleteConfirmation = false;
+    private string successMessage = "";
+
+    protected override async Task OnInitializedAsync()
+    {
+        await LoadGearDetails();
+    }
+
+    private async Task LoadGearDetails()
+    {
+        gear = await AlbertaAdventureServices.GetGearInventory(gearId);
+        StateHasChanged(); // Ensure UI updates
+    }
+
+    private void ShowReservationForm()
+    {
+        showReservationForm = true;
+        successMessage = ""; // Clear any previous messages
+    }
+
+    private void CancelReservation()
+    {
+        showReservationForm = false;
+        successMessage = "";
+    }
+
+    private async Task ReserveGear()
+    {
+        try
+        {
+            int userId = 30; // Replace with actual user ID logic
+
+            // Reservation logic
+            // await AlbertaAdventureServices.AddReservationAsync(...)
+            // await AlbertaAdventureServices.UpdateGearStatusAsync(gearId, false);
+            // await LoadGearDetails();
+
+            successMessage = "Reservation successful!";
+            showReservationForm = false;
+        }
+        catch (Exception ex)
+        {
+            successMessage = $"Reservation failed: {ex.Message}";
+        }
+    }
+
+    private void NavigateToUpdate()
+    {
+        NavigationManager.NavigateTo($"/UpdateGearInventory/{gear.GearID}");
+    }
+
+    private void ClosePage()
+    {
+        NavigationManager.NavigateTo("/");
+    }
+
+    private void ShowDeleteConfirmation()
+    {
+        showDeleteConfirmation = true;
+        successMessage = "";
+    }
+
+    private void CancelDelete()
+    {
+        showDeleteConfirmation = false;
+    }
+
+    private async void ConfirmDelete()
+    {
+        try
+        {
+            await AlbertaAdventureServices.DeleteGearInventory(gearId);
+            successMessage = "Gear deleted successfully.";
+            NavigationManager.NavigateTo("/"); // Navigate to home or gear list
+        }
+        catch (Exception ex)
+        {
+            successMessage = $"Delete failed: {ex.Message}";
+        }
+    }
+}

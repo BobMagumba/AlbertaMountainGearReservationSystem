@@ -1,0 +1,148 @@
+﻿@page "/cart"
+@inject CartViewModel userReservationCart
+@inject AlbertaAdventureServices AlbertaAdventureServices
+@inject NavigationManager Navigation
+@rendermode InteractiveServer
+@using AlbertaAdventureClassLibrary.Entities
+@using AlbertaAdventureClassLibrary.ViewModels
+
+<h1 style="margin-bottom:4rem;" class="text-white fw-bold mb-4">Gear Cart</h1>
+
+<div style="position: absolute; top: 20px; right: 20px; z-index: 1000;">
+    <button class="btn btn-close-custom" @onclick="NavigateHome" title="Go to Home">
+        &times;
+    </button>
+</div>
+
+@if (userReservationCart.Items.Count == 0)
+{
+    <div class="alert alert-info">Your cart is empty.</div>
+}
+else
+{
+    <div class="row g-4">
+        @foreach (var item in userReservationCart.Items)
+        {
+            <div class="col-md-6 col-lg-4">
+                <div class="card shadow-sm rounded-3 border-0 p-3" style="min-height: 280px;">
+
+                    <div class="card-body p-0 d-flex flex-column justify-content-between">
+                        <div style="font-size: 0.9rem;">
+                            <h6 class="fw-bold text-primary mb-2">@item.TagNumber</h6>
+                            <div><strong>Category:</strong> @item.CategoryName</div>
+                            <div><strong>Brand:</strong> @item.Brand</div>
+                            <div><strong>Size:</strong> @item.Size</div>
+                            <div><strong>Condition:</strong> @item.Condition</div>
+                            <div><strong>Use Hours:</strong> @item.EstimatedUseHours</div>
+                            <div><strong>Instructions:</strong> @item.Instructions</div>
+                        </div>
+
+                        <div class="d-flex justify-content-between mt-3">
+                            <button class="btn btn-outline-danger btn-sm w-45" @onclick="@(() => RemoveItem(item.GearID))">Remove</button>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="d-flex justify-content-center mt-4 gap-2">
+        <button class="btn btn-success" @onclick="() => isReservationDialogOpen = true">Reserve All</button>
+        <button class="btn btn-secondary" @onclick="ClearCart">Cancel</button>
+    </div>
+}
+
+<!-- Reservation Instructions Dialog -->
+<MatDialog @bind-IsOpen="isReservationDialogOpen">
+    <div class="card p-4" style="max-width: 500px;">
+        <div class="card-body">
+            <h4 class="card-title text-center mb-4">Reservation Instructions</h4>
+
+            <div class="mb-3">
+                <label class="form-label">Instructions</label>
+                <InputTextArea class="form-control" @bind-Value="reservationInstructionsInput" rows="3" />
+            </div>
+
+            <div class="d-flex justify-content-end gap-2">
+                <button type="button" class="btn btn-success" @onclick="ConfirmReservation">Confirm & Reserve</button>
+                <button type="button" class="btn btn-secondary" @onclick="() => isReservationDialogOpen = false">Cancel</button>
+            </div>
+        </div>
+    </div>
+</MatDialog>
+
+@code {
+    private bool isReservationDialogOpen = false;
+    private string reservationInstructionsInput = string.Empty;
+
+    private async Task ConfirmReservation()
+    {
+        isReservationDialogOpen = false;
+        await ReserveAll(); // Run reservation after dialog input
+    }
+
+    private void RemoveItem(int gearId)
+    {
+        userReservationCart.RemoveItem(gearId);
+    }
+
+    private void ClearCart()
+    {
+        userReservationCart.Clear();
+    }
+
+    private void NavigateHome()
+    {
+        Navigation.NavigateTo("/");
+    }
+
+    private async Task ReserveAll()
+    {
+        if (!userReservationCart.Items.Any() ||
+            !userReservationCart.StartDate.HasValue ||
+            !userReservationCart.EndDate.HasValue)
+        {
+            // Optionally show a validation message
+            return;
+        }
+
+        // 1. Fetch full GearInventory entities
+        List<AlbertaAdventureClassLibrary.Entities.GearInventory> reservedGearList = new();
+
+        foreach (var item in userReservationCart.Items)
+        {
+            var gear = await AlbertaAdventureServices.GetGearInventoryById(item.GearID);
+            if (gear != null)
+            {
+                reservedGearList.Add(gear);
+            }
+        }
+
+        // 2. Create Reservation entity with input instructions
+        var reservation = new Reservation
+            {
+                UserID = 30, // Replace with actual logged-in user ID
+                Status = "Pending",
+                RequestDate = DateTime.Now,
+                StartDate = userReservationCart.StartDate.Value,
+                EndDate = userReservationCart.EndDate.Value,
+                ReservationInstructions = reservationInstructionsInput,
+                EstimatedUseHours = userReservationCart.Items.Sum(i => i.EstimatedUseHours)
+            };
+
+        // 3. Save the reservation and associated gear
+        await AlbertaAdventureServices.AddReservation(reservedGearList, reservation);
+
+        // 4. Update gear status
+        foreach (var gear in reservedGearList)
+        {
+            await AlbertaAdventureServices.UpdateGearStatusAsync(gear.GearID, false);
+        }
+
+        // 5. Clear cart and redirect
+        userReservationCart.Clear();
+        Navigation.NavigateTo($"myReservations/{reservation.UserID}");
+
+    }
+}

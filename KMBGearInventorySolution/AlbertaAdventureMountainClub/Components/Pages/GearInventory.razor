@@ -1,0 +1,162 @@
+﻿@page "/GearInventory"
+@inject NavigationManager NavigationManager
+@inject AlbertaAdventureServices AlbertaAdventureServices
+@inject AlbertaAdventureClassLibrary.Entities.Reservation CartReservation
+<h1>AAMC Gear Inventory</h1>
+<div>
+    <button>AddGear</button>
+</div>
+
+<div>
+    <div>@GearInventors?.Count AAMC Gear Inventory</div>
+    <div>
+        <button @onclick="(() => OrderByNew(true))">New</button>
+        <button @onclick="(()=> OrderByNew(true))">Popular</button>
+    </div>
+    <div>
+        <input type="text" placeholder="Search" arial-label="Search box" @oninput="((txt) =>OnSearchInput((string)txt.Value))"/>
+    </div>
+</div>
+<div>
+    <div>
+        @if (GearInventors is not null)
+        {
+
+            @foreach (var gear in GearInventors)
+            {
+                <div class="gear-item">
+                    <div>
+                        <span class="oi oi-caret-top"></span>
+                    </div>
+                    <div>
+                        <div @onclick="OpenDetails"></div>
+                        @gear.CategoryName
+                    </div>
+                    <div>
+                        <div> @gear.IsAvailable</div>
+                    </div>
+                </div>
+            }
+
+        }
+    </div>
+    <div>
+        @if (Categories is not null)
+        {
+            <span style="color:red;">Category</span>
+            <div @onclick="OnCategoryAll">All</div>
+            @foreach (var category in Categories)
+            {
+                <div>@category.CategoryName</div>
+            }
+        }
+       @*  @if (statuses is not null)
+        {
+            <span>Status</span>
+            <div @onclick="(()=> OnCategoryAll())">All</div>
+            @foreach (var status in Statuses)
+            {
+                <div @onclick="(()=> OnCategoryAll())" @status.StatusName>@status.StatusName</div>
+            }
+        }) *@
+    </div>
+           
+</div>
+
+
+@code {
+    private List<GearInventoryViewModel> GearInventors { get; set; }
+    private List<CategoryViewModel> Categories { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        await GetGearInventories();
+        await GetAllCategories();
+
+    }
+
+    //Get all gear inventories
+    private async Task GetGearInventories()
+    {
+        //GearInventors = await AlbertaAdventureServices.GetAllGearInventory();
+
+    }
+
+    //Get all categories
+    private async Task GetAllCategories()
+    {
+        Categories = await AlbertaAdventureServices.GetAllCategories();
+    }
+
+    private async Task AddReservation()
+    {
+        List<AlbertaAdventureClassLibrary.Entities.GearInventory> gi = new();
+        AlbertaAdventureClassLibrary.Entities.GearInventory a = new();
+        a.GearID = 18;
+        a.CategoryID = 21;
+        a.Description = "A description!";
+
+        gi.Add(a);
+
+        AlbertaAdventureClassLibrary.Entities.GearInventory b = new();
+        b.GearID = 19;
+        b.CategoryID = 21;
+        b.Description = "A description again!";
+
+        gi.Add(b);
+        Reservation r = new();
+        r.UserID = 32; 
+        r.Status = "pending";
+        r.RequestDate = DateTime.Now;
+        r.StartDate = DateTime.Now;
+        r.EndDate = DateTime.Now;
+        r.ReservationInstructions = "Third times the charm";
+        r.EstimatedUseHours = 15;
+
+        // await AlbertaAdventureServices.AddReservation(gi, r);
+    }
+
+    private async Task DeleteReservation()
+    {
+        Reservation r = new();
+        r.ReservationID = 50;
+        r.UserID = 32;
+        r.Status = "pending";
+        r.RequestDate = DateTime.Now;
+        r.StartDate = DateTime.Now;
+        r.EndDate = DateTime.Now;
+        r.ReservationInstructions = "Third times the charm";
+        r.EstimatedUseHours = 15;
+
+        await AlbertaAdventureServices.DeleteResevervation(r);
+    }
+
+    private void OrderByNew(bool isNew)
+    {
+        if (isNew)
+        {
+            // GearInventors = GearInventors.OrderByDescending(x => x.CreatedDate).ToList();
+        }
+        else
+        {
+            // GearInventors = GearInventors.OrderBy(x => x.CreatedDate).ToList();
+        }
+    }
+
+    private void OnSearchInput(string search)
+    {
+        // GearInventors = GearInventors.Where(x => x.Name.Contains(search)).ToList();
+    }
+
+    private void OpenDetails()
+    {
+        NavigationManager.NavigateTo("/GearInventoryDetails");
+    }
+
+    private void OnCategoryAll()
+    {
+        // GearInventors = GearInventors.Where(x => x.CategoryName == "All").ToList();
+    }
+
+
+}

@@ -1,0 +1,71 @@
+﻿@page "/AdminApprovals"
+@inject NavigationManager NavigationManager
+@inject AlbertaAdventureServices AlbertaAdventureServices
+
+<h1>Pending Approval Reservations</h1>
+
+<div>
+    <div>@submittedGearReservations?.Count Reservation Requests</div>
+    <div>
+        <button @onclick="ClosePage">ClosePage</button>
+    </div>
+</div>
+
+@if (submittedGearReservations is not null)
+{
+    @foreach (var reservation in submittedGearReservations)
+    {
+        <div>
+            <div>
+                <div>
+                    @* <div>
+                        <img src="@reservation" alt="@reservation.Condition" />
+                    </div> *@
+                    <div>
+                        <h2>@reservation.ReservationID</h2>
+                        <div>@reservation.UserID</div>
+                        <div>@reservation.RequestDate</div>
+                        <div>@reservation.StartDate</div>
+                        <div>@reservation.EndDate</div>
+                        <div>@reservation.Status</div>
+                        <div>@reservation.ReservationInstructions</div>
+                    </div>
+                </div>
+                <div>
+                    <button>Approve</button>
+                    <button>Reject</button>
+                </div>
+            </div>
+        </div>
+    }
+}
+
+
+@code {
+    private List<ReservationViewModel> submittedGearReservations;
+
+    protected override async Task OnInitializedAsync()
+    {
+        submittedGearReservations = await AlbertaAdventureServices.GetAllSubmittedGearReservationsWaitingApproval();
+    }
+
+    private async Task ApproveReservation(ReservationViewModel submittedGearReservation)
+    {
+        submittedGearReservation.Status = "Approved";
+        submittedGearReservations.Remove(submittedGearReservation); // Remove from the list of submitted reservations from the UI without having to refresh the page from the server
+        // await AlbertaAdventureServices.UpdateReservation(submittedGearReservation); waitinf for this method to be implemented
+    }
+
+    private async Task RejectReservation(ReservationViewModel submittedGearReservation)
+    {
+        submittedGearReservation.Status = "Rejected";
+        submittedGearReservations.Remove(submittedGearReservation); // Remove from the list of submitted reservations from the UI without having to refresh the page from the server
+        // await AlbertaAdventureServices.UpdateReservation(submittedGearReservation); waiting for this method to be implemented
+    }
+
+    private void ClosePage()
+    {
+        NavigationManager.NavigateTo("/GearInventory");
+    }
+
+}

@@ -1,0 +1,89 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AlbertaAdventureMountainClub
+build_property.RootNamespace = AlbertaAdventureMountainClub
+build_property.ProjectDir = C:\Users\bmagu\OneDrive\Desktop\BAIST\capstone\GearReservation\AlbertaMountainGearReservationSystem\KMBGearInventorySolution\AlbertaAdventureMountainClub\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\bmagu\OneDrive\Desktop\BAIST\capstone\GearReservation\AlbertaMountainGearReservationSystem\KMBGearInventorySolution\AlbertaAdventureMountainClub
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 8.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/Users/bmagu/OneDrive/Desktop/BAIST/capstone/GearReservation/AlbertaMountainGearReservationSystem/KMBGearInventorySolution/AlbertaAdventureMountainClub/Components/App.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xBcHAucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/BAIST/capstone/GearReservation/AlbertaMountainGearReservationSystem/KMBGearInventorySolution/AlbertaAdventureMountainClub/Components/Pages/AdminApprovals.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xBZG1pbkFwcHJvdmFscy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/BAIST/capstone/GearReservation/AlbertaMountainGearReservationSystem/KMBGearInventorySolution/AlbertaAdventureMountainClub/Components/Pages/DeleteGear.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xEZWxldGVHZWFyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/BAIST/capstone/GearReservation/AlbertaMountainGearReservationSystem/KMBGearInventorySolution/AlbertaAdventureMountainClub/Components/Pages/Error.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xFcnJvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/BAIST/capstone/GearReservation/AlbertaMountainGearReservationSystem/KMBGearInventorySolution/AlbertaAdventureMountainClub/Components/Pages/GearInventory.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xHZWFySW52ZW50b3J5LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/BAIST/capstone/GearReservation/AlbertaMountainGearReservationSystem/KMBGearInventorySolution/AlbertaAdventureMountainClub/Components/Pages/Login.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xMb2dpbi5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/BAIST/capstone/GearReservation/AlbertaMountainGearReservationSystem/KMBGearInventorySolution/AlbertaAdventureMountainClub/Components/Pages/MyReservations.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xNeVJlc2VydmF0aW9ucy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/BAIST/capstone/GearReservation/AlbertaMountainGearReservationSystem/KMBGearInventorySolution/AlbertaAdventureMountainClub/Components/Pages/ReservationDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xSZXNlcnZhdGlvbkRldGFpbHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/BAIST/capstone/GearReservation/AlbertaMountainGearReservationSystem/KMBGearInventorySolution/AlbertaAdventureMountainClub/Components/Routes.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xSb3V0ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/BAIST/capstone/GearReservation/AlbertaMountainGearReservationSystem/KMBGearInventorySolution/AlbertaAdventureMountainClub/Components/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xfSW1wb3J0cy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/bmagu/OneDrive/Desktop/BAIST/capstone/GearReservation/AlbertaMountainGearReservationSystem/KMBGearInventorySolution/AlbertaAdventureMountainClub/Components/Layout/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTWFpbkxheW91dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-p0yjxiu25a
+
+[C:/Users/bmagu/OneDrive/Desktop/BAIST/capstone/GearReservation/AlbertaMountainGearReservationSystem/KMBGearInventorySolution/AlbertaAdventureMountainClub/Components/Layout/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xMYXlvdXRcTmF2TWVudS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-brpe9gygy3
+
+[C:/Users/bmagu/OneDrive/Desktop/BAIST/capstone/GearReservation/AlbertaMountainGearReservationSystem/KMBGearInventorySolution/AlbertaAdventureMountainClub/Components/Pages/Cart.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDYXJ0LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-frtfxez44q
+
+[C:/Users/bmagu/OneDrive/Desktop/BAIST/capstone/GearReservation/AlbertaMountainGearReservationSystem/KMBGearInventorySolution/AlbertaAdventureMountainClub/Components/Pages/CreateGearInInventory.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xDcmVhdGVHZWFySW5JbnZlbnRvcnkucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-xexl4rla93
+
+[C:/Users/bmagu/OneDrive/Desktop/BAIST/capstone/GearReservation/AlbertaMountainGearReservationSystem/KMBGearInventorySolution/AlbertaAdventureMountainClub/Components/Pages/GearDetails.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xHZWFyRGV0YWlscy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = b-yetn5a5kq1
+
+[C:/Users/bmagu/OneDrive/Desktop/BAIST/capstone/GearReservation/AlbertaMountainGearReservationSystem/KMBGearInventorySolution/AlbertaAdventureMountainClub/Components/Pages/Home.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xIb21lLnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-flaw61aok8
+
+[C:/Users/bmagu/OneDrive/Desktop/BAIST/capstone/GearReservation/AlbertaMountainGearReservationSystem/KMBGearInventorySolution/AlbertaAdventureMountainClub/Components/Pages/UpdateGearInventory.razor]
+build_metadata.AdditionalFiles.TargetPath = Q29tcG9uZW50c1xQYWdlc1xVcGRhdGVHZWFySW52ZW50b3J5LnJhem9y
+build_metadata.AdditionalFiles.CssScope = b-o1e1auomy9

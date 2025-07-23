@@ -1,0 +1,134 @@
+/* Main Container */
+.create-gear-container[b-o1e1auomy9] {
+    max-width: 550px;
+    margin: 50px auto;
+    padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0px 6px 15px rgba(0, 0, 0, 0.12);
+    transition: transform 0.2s ease-in-out;
+}
+
+    .create-gear-container:hover[b-o1e1auomy9] {
+        transform: scale(1.02);
+    }
+
+/* Header Section */
+.create-gear-header[b-o1e1auomy9] {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+    .create-gear-header h2[b-o1e1auomy9] {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #2C3E50;
+    }
+
+/* Close Button */
+.close-btn[b-o1e1auomy9] {
+    background: none;
+    border: none;
+    font-size: 1.8rem;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.3s ease-in-out;
+}
+
+    .close-btn:hover[b-o1e1auomy9] {
+        color: #555;
+    }
+
+/* Form Group */
+.gear-form .form-group[b-o1e1auomy9] {
+    margin-bottom: 18px;
+}
+
+.gear-form label[b-o1e1auomy9] {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #333;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Input Fields */
+.gear-form .form-control[b-o1e1auomy9] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1rem;
+    background: #f9f9f9;
+    transition: border 0.3s ease-in-out;
+}
+
+    .gear-form .form-control:focus[b-o1e1auomy9] {
+        border: 1px solid #39BAD8;
+        background: #fff;
+        outline: none;
+        box-shadow: 0px 0px 8px rgba(57, 186, 216, 0.3);
+    }
+
+/* Button Group */
+.button-group[b-o1e1auomy9] {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 25px;
+}
+
+/* Submit Button */
+.submit-btn[b-o1e1auomy9] {
+    width: 48%;
+    padding: 14px;
+    background: #39BAD8;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+    .submit-btn:hover[b-o1e1auomy9] {
+        background: #2a91a6;
+        transform: scale(1.05);
+    }
+
+/* Cancel Button */
+.cancel-btn[b-o1e1auomy9] {
+    width: 48%;
+    padding: 14px;
+    background: #E74C3C;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out, transform 0.2s;
+}
+
+    .cancel-btn:hover[b-o1e1auomy9] {
+        background: #C0392B;
+        transform: scale(1.05);
+    }
+
+/* Two-column form layout */
+.form-row[b-o1e1auomy9] {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.half-width[b-o1e1auomy9] {
+    flex: 1;
+}
+
+    /* Optional: Prevent shrinking too small */
+    .half-width .form-control[b-o1e1auomy9] {
+        min-width: 0;
+    }

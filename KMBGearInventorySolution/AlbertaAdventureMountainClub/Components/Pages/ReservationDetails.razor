@@ -1,0 +1,108 @@
+﻿@page "/reservation-details/{reservationId:int}"
+@inject AlbertaAdventureServices AlbertaAdventureServices
+@inject NavigationManager NavigationManager
+@rendermode InteractiveServer
+
+<!-- Close Button -->
+<button class="close-btn" @onclick="GoHome">×</button>
+
+<h2 class="text-white mb-4">Reservation Details</h2>
+
+@if (reservation == null)
+{
+    <p class="text-white">Loading reservation...</p>
+}
+else
+{
+    <div class="card bg-light text-dark mb-4 shadow-sm">
+        <div class="card-body">
+            <h5 class="card-title text-info">Reservation #@reservation.ReservationID</h5>
+            <p><strong>Dates:</strong> @reservation.StartDate?.ToShortDateString() - @reservation.EndDate?.ToShortDateString()</p>
+            <p><strong>Instructions:</strong> @reservation.ReservationInstructions</p>
+        </div>
+    </div>
+
+    <h4 class="text-light">Reserved Gear</h4>
+
+    @if (gearList == null || gearList.Count == 0)
+    {
+        <p class="text-white">No gear found for this reservation.</p>
+    }
+    else
+    {
+        <div class="row g-3">
+            @foreach (var gear in gearList)
+            {
+                <div class="col-md-6">
+                    <div class="card gear-card shadow-sm"
+                    @onclick="() => NavigateToGearDetails(gear.GearID)">
+                        <div class="card-body">
+                            <h6 class="card-title">@gear.TagNumber</h6>
+                            <p class="card-text">@gear.CategoryName | @gear.Brand | @gear.Size</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+}
+
+<style>
+    .close-btn {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+    transition: color 0.3s ease;
+    }
+
+    .close-btn:hover {
+    color: #0dcaf0;
+    }
+
+    .gear-card {
+    background-color: #ffffff;
+    color: #000;
+    cursor: pointer;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .gear-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(13, 202, 240, 0.3);
+    }
+</style>
+
+@code {
+    [Parameter] public int reservationId { get; set; }
+
+    private ReservationViewModel reservation;
+    private List<GearInventoryViewModel> gearList;
+
+    protected override async Task OnInitializedAsync()
+    {
+        // Get reservation info
+        var allUserReservations = await AlbertaAdventureServices.GetAllReservationsByUserId(30); // Hardcoded user ID for now
+        reservation = allUserReservations.FirstOrDefault(r => r.ReservationID == reservationId);
+
+        // Get reserved gear
+        gearList = await AlbertaAdventureServices.GetGearByReservationId(reservationId);
+    }
+
+    private void NavigateToGearDetails(int gearId)
+    {
+        NavigationManager.NavigateTo($"/GearDetails/{gearId}");
+        
+    }
+
+
+    private void GoHome()
+    {
+        NavigationManager.NavigateTo("myReservations/30");
+    }
+}
